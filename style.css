@@ -1,0 +1,43 @@
+body {
+    background-image: url('/images/sky.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.bear {
+    height: 80vh;
+    margin-top: 40px;
+}
+
+.main {
+    display: flex;
+
+}
+
+.left-container{
+    background-color: linen;
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: fixed;
+}
+
+.name {
+    width: 30%;
+}
+
+.projects {
+    width: 70%;
+}
+
+.right-container{
+    background-color: cornflowerblue;
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Hello!</title>   
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  
+  </head>  
+  <body>
+
+
+    <div id="canvas"></div>
+
+    <script>
+      let pts;
+      let caslon;
+
+      function preload(){
+         caslon = loadFont('/BigCaslon.ttf');
+      } 
+
+      function setup() {
+        //  createCanvas(windowWidth, windowHeight);
+  
+         pts = caslon.textToPoints('under construction', 0, 0, windowWidth/10,{
+         sampleFactor: 0.25,
+         simplifyThreshold: 0
+         });
+
+      // for(let i =0; i<pts.length; 
+      }
+
+      function draw() {
+        var canv = createCanvas(windowWidth, windowHeight);
+        canv.parent("canvas");
+         translate(windowWidth/8, windowHeight/3);
+
+        beginShape(POINTS);
+        stroke(255);
+        for(let i =0; i< pts.length; i++){
+         vertex(pts[i].x + sin(frameCount*0.05 + pts[i].y*0.1)*5, pts[i].y);
+        }
+        endShape();
+
+      }
+
+      function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
+      }
+
+
+
+    </script>
+
+  </body>
